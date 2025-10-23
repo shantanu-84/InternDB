@@ -36,11 +36,20 @@
     <div class="row">
         <div class="col-md-6">
             <div class="card">
-                        <div class="card-header">
-                            <h5><i class="oi oi-clock"></i> 3 Most Recently Added Interns</h5>
-                        </div>
+                <div class="card-header">
+                    <h5><i class="oi oi-clock"></i> 3 Most Recently Added Interns</h5>
+                </div>
                 <div class="card-body">
-                    @if (recentInterns.Any())
+                    @if (isLoading)
+                    {
+                        <div class="text-center">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <p class="mt-2">Loading interns...</p>
+                        </div>
+                    }
+                    else if (recentInterns.Any())
                     {
                         <div class="list-group">
                             @foreach (var intern in recentInterns.Take(3))
@@ -68,7 +77,16 @@
                     <h5><i class="oi oi-bar-chart"></i> Top 3 Departments by Intern Count</h5>
                 </div>
                 <div class="card-body">
-                    @if (topDepartments.Any())
+                    @if (isLoading)
+                    {
+                        <div class="text-center">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <p class="mt-2">Loading departments...</p>
+                        </div>
+                    }
+                    else if (topDepartments.Any())
                     {
                         <div class="list-group">
                             @foreach (var dept in topDepartments.Take(3))
