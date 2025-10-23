@@ -58,7 +58,7 @@
 
 3. **Access the application**
    ```
-   http://localhost:5112
+   http://localhost:5112/login
    ```
 
 ### 🔑 Login Credentials
@@ -88,11 +88,25 @@
 
 ```
 InternDB/
-├── Data/                    # Entity models and DbContext
-├── Pages/                   # Blazor pages (Home, Login, Dashboard, Interns)
-├── Services/                # Business logic and authentication
-├── Shared/                  # Layout and navigation components
-└── wwwroot/                 # Static files (CSS, JS)
+├── 📁 Data/
+│   ├── Intern.cs                 # Intern entity model
+│   ├── InternDbContext.cs        # Database context
+│   └── Migrations/               # Entity Framework migrations
+├── 📁 Pages/
+│   ├── Home.razor               # Landing page
+│   ├── Login.razor              # Authentication
+│   ├── SimpleAdminDashboard.razor # Analytics dashboard
+│   ├── Interns.razor            # Intern management
+│   └── AddIntern.razor          # Add new intern
+├── 📁 Services/
+│   ├── InternService.cs         # Business logic
+│   └── SimpleAuthenticationStateProvider.cs # Auth provider
+├── 📁 Shared/
+│   ├── MainLayout.razor         # Main layout
+│   └── NavMenu.razor            # Navigation menu
+└── 📁 wwwroot/
+    ├── css/                     # Stylesheets
+    └── js/                      # JavaScript files
 ```
 
 ---
