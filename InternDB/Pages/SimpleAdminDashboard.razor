@@ -57,7 +57,7 @@
                     }
                     else
                     {
-                        <p class="text-muted">No interns found</p>
+                        <p class="text-muted">No interns found (Total: @totalInterns)</p>
                     }
                 </div>
             </div>
@@ -82,7 +82,7 @@
                     }
                     else
                     {
-                        <p class="text-muted">No department data available</p>
+                        <p class="text-muted">No department data available (Total: @totalInterns)</p>
                     }
                 </div>
             </div>
@@ -102,15 +102,23 @@
 
     private async Task LoadDashboardData()
     {
-        var interns = await InternService.GetAllInternsAsync();
-        totalInterns = interns.Count;
-        recentInterns = interns.OrderByDescending(i => i.CreatedAt).ToList();
-        
-        // Calculate top departments
-        topDepartments = interns
-            .GroupBy(i => i.Department)
-            .ToDictionary(g => g.Key, g => g.Count())
-            .OrderByDescending(kvp => kvp.Value)
-            .ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+        try
+        {
+            var interns = await InternService.GetAllInternsAsync();
+            totalInterns = interns.Count;
+            recentInterns = interns.OrderByDescending(i => i.CreatedAt).ToList();
+            
+            // Calculate top departments
+            topDepartments = interns
+                .GroupBy(i => i.Department)
+                .ToDictionary(g => g.Key, g => g.Count())
+                .OrderByDescending(kvp => kvp.Value)
+                .ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+        }
+        catch (Exception ex)
+        {
+            // Log error or handle it
+            Console.WriteLine($"Error loading dashboard data: {ex.Message}");
+        }
     }
 }

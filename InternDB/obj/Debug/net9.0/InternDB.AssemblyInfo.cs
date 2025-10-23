@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InternDB")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0f459b5e45bae2567b218c0c62fc6d4152a6ef58")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c590a1416f0c21a64a50fb8459e9f3aad47a8127")]
 [assembly: System.Reflection.AssemblyProductAttribute("InternDB")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InternDB")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
