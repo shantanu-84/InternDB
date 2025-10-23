@@ -43,6 +43,12 @@ app.UseRouting();
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
 
-// No seeding needed for simple authentication
+// Seed sample data
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<InternDbContext>();
+    await context.Database.EnsureCreatedAsync();
+    await DataSeeder.SeedDataAsync(context);
+}
 
 app.Run();

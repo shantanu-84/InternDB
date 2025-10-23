@@ -94,14 +94,21 @@
     private int totalInterns = 0;
     private List<Intern> recentInterns = new();
     private Dictionary<string, int> topDepartments = new();
+    private bool isLoading = false;
 
     protected override async Task OnInitializedAsync()
     {
-        await LoadDashboardData();
+        if (!isLoading)
+        {
+            await LoadDashboardData();
+        }
     }
 
     private async Task LoadDashboardData()
     {
+        if (isLoading) return;
+        
+        isLoading = true;
         try
         {
             var interns = await InternService.GetAllInternsAsync();
@@ -119,6 +126,10 @@
         {
             // Log error or handle it
             Console.WriteLine($"Error loading dashboard data: {ex.Message}");
+        }
+        finally
+        {
+            isLoading = false;
         }
     }
 }
