@@ -1,0 +1,293 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Main Project\\InternDB\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|d:\\main project\\interndb\\interndb\\wwwroot\\css\\bootstrap\\bootstrap.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|solutionrelative:interndb\\wwwroot\\css\\bootstrap\\bootstrap.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|d:\\main project\\interndb\\interndb\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|solutionrelative:interndb\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|d:\\main project\\interndb\\interndb\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|solutionrelative:interndb\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|d:\\main project\\interndb\\interndb\\shared\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|solutionrelative:interndb\\shared\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|d:\\main project\\interndb\\interndb\\shared\\mainlayout.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|solutionrelative:interndb\\shared\\mainlayout.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|d:\\main project\\interndb\\interndb\\shared\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|solutionrelative:interndb\\shared\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|d:\\main project\\interndb\\interndb\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|solutionrelative:interndb\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|d:\\main project\\interndb\\interndb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|solutionrelative:interndb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|d:\\main project\\interndb\\interndb\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|solutionrelative:interndb\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|d:\\main project\\interndb\\interndb\\interndb.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|solutionrelative:interndb\\interndb.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|d:\\main project\\interndb\\interndb\\shared\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|solutionrelative:interndb\\shared\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|d:\\main project\\interndb\\interndb\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|solutionrelative:interndb\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|d:\\main project\\interndb\\interndb\\pages\\_host.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|solutionrelative:interndb\\pages\\_host.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|d:\\main project\\interndb\\interndb\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|solutionrelative:interndb\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|d:\\main project\\interndb\\interndb\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|solutionrelative:interndb\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|d:\\main project\\interndb\\interndb\\wwwroot\\favicon.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|solutionrelative:interndb\\wwwroot\\favicon.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|d:\\main project\\interndb\\interndb\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{D526366D-B12D-4EFD-9373-1F015C49DE45}|InternDB\\InternDB.csproj|solutionrelative:interndb\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainLayout.razor.css",
+              "DocumentMoniker": "D:\\Main Project\\InternDB\\InternDB\\Shared\\MainLayout.razor.css",
+              "RelativeDocumentMoniker": "InternDB\\Shared\\MainLayout.razor.css",
+              "ToolTip": "D:\\Main Project\\InternDB\\InternDB\\Shared\\MainLayout.razor.css",
+              "RelativeToolTip": "InternDB\\Shared\\MainLayout.razor.css",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAEYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-22T10:53:05.95Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "D:\\Main Project\\InternDB\\InternDB\\Shared\\NavMenu.razor",
+              "RelativeDocumentMoniker": "InternDB\\Shared\\NavMenu.razor",
+              "ToolTip": "D:\\Main Project\\InternDB\\InternDB\\Shared\\NavMenu.razor",
+              "RelativeToolTip": "InternDB\\Shared\\NavMenu.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T10:53:15.944Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "D:\\Main Project\\InternDB\\InternDB\\_Imports.razor",
+              "RelativeDocumentMoniker": "InternDB\\_Imports.razor",
+              "ToolTip": "D:\\Main Project\\InternDB\\InternDB\\_Imports.razor",
+              "RelativeToolTip": "InternDB\\_Imports.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T11:18:53.863Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "bootstrap.min.css",
+              "DocumentMoniker": "D:\\Main Project\\InternDB\\InternDB\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+              "RelativeDocumentMoniker": "InternDB\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+              "ToolTip": "D:\\Main Project\\InternDB\\InternDB\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+              "RelativeToolTip": "InternDB\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+              "ViewState": "AgIAABctAAAAAAAAAAAswEAtAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-22T11:04:51.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "D:\\Main Project\\InternDB\\InternDB\\Shared\\MainLayout.razor",
+              "RelativeDocumentMoniker": "InternDB\\Shared\\MainLayout.razor",
+              "ToolTip": "D:\\Main Project\\InternDB\\InternDB\\Shared\\MainLayout.razor",
+              "RelativeToolTip": "InternDB\\Shared\\MainLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T10:52:55.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "App.razor",
+              "DocumentMoniker": "D:\\Main Project\\InternDB\\InternDB\\App.razor",
+              "RelativeDocumentMoniker": "InternDB\\App.razor",
+              "ToolTip": "D:\\Main Project\\InternDB\\InternDB\\App.razor",
+              "RelativeToolTip": "InternDB\\App.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T10:45:21.444Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\Main Project\\InternDB\\InternDB\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "InternDB\\appsettings.Development.json",
+              "ToolTip": "D:\\Main Project\\InternDB\\InternDB\\appsettings.Development.json",
+              "RelativeToolTip": "InternDB\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-22T11:19:41.272Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Main Project\\InternDB\\InternDB\\Program.cs",
+              "RelativeDocumentMoniker": "InternDB\\Program.cs",
+              "ToolTip": "D:\\Main Project\\InternDB\\InternDB\\Program.cs",
+              "RelativeToolTip": "InternDB\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T10:46:19.921Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "bootstrap.min.css.map",
+              "DocumentMoniker": "D:\\Main Project\\InternDB\\InternDB\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+              "RelativeDocumentMoniker": "InternDB\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+              "ToolTip": "D:\\Main Project\\InternDB\\InternDB\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+              "RelativeToolTip": "InternDB\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-22T11:06:20.383Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "InternDB.csproj",
+              "DocumentMoniker": "D:\\Main Project\\InternDB\\InternDB\\InternDB.csproj",
+              "RelativeDocumentMoniker": "InternDB\\InternDB.csproj",
+              "ToolTip": "D:\\Main Project\\InternDB\\InternDB\\InternDB.csproj",
+              "RelativeToolTip": "InternDB\\InternDB.csproj",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAAMAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-22T11:42:34.485Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "NavMenu.razor.css",
+              "DocumentMoniker": "D:\\Main Project\\InternDB\\InternDB\\Shared\\NavMenu.razor.css",
+              "RelativeDocumentMoniker": "InternDB\\Shared\\NavMenu.razor.css",
+              "ToolTip": "D:\\Main Project\\InternDB\\InternDB\\Shared\\NavMenu.razor.css",
+              "RelativeToolTip": "InternDB\\Shared\\NavMenu.razor.css",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAEQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-22T10:53:25.252Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Main Project\\InternDB\\InternDB\\appsettings.json",
+              "RelativeDocumentMoniker": "InternDB\\appsettings.json",
+              "ToolTip": "D:\\Main Project\\InternDB\\InternDB\\appsettings.json",
+              "RelativeToolTip": "InternDB\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-22T10:46:01.839Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "_Host.cshtml",
+              "DocumentMoniker": "D:\\Main Project\\InternDB\\InternDB\\Pages\\_Host.cshtml",
+              "RelativeDocumentMoniker": "InternDB\\Pages\\_Host.cshtml",
+              "ToolTip": "D:\\Main Project\\InternDB\\InternDB\\Pages\\_Host.cshtml",
+              "RelativeToolTip": "InternDB\\Pages\\_Host.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T10:51:07.556Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Index.razor",
+              "DocumentMoniker": "D:\\Main Project\\InternDB\\InternDB\\Pages\\Index.razor",
+              "RelativeDocumentMoniker": "InternDB\\Pages\\Index.razor",
+              "ToolTip": "D:\\Main Project\\InternDB\\InternDB\\Pages\\Index.razor",
+              "RelativeToolTip": "InternDB\\Pages\\Index.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T10:50:04.767Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\Main Project\\InternDB\\InternDB\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "InternDB\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\Main Project\\InternDB\\InternDB\\Properties\\launchSettings.json",
+              "RelativeToolTip": "InternDB\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-22T10:48:43.308Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "favicon.png - PNG [32x32, 32 bit, PNG]",
+              "DocumentMoniker": "D:\\Main Project\\InternDB\\InternDB\\wwwroot\\favicon.png",
+              "RelativeDocumentMoniker": "InternDB\\wwwroot\\favicon.png",
+              "ToolTip": "D:\\Main Project\\InternDB\\InternDB\\wwwroot\\favicon.png - PNG [32x32, 32 bit, PNG]",
+              "RelativeToolTip": "InternDB\\wwwroot\\favicon.png - PNG [32x32, 32 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-10-22T11:08:23.986Z",
+              "EditorCaption": " - PNG [32x32, 32 bit, PNG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "site.css",
+              "DocumentMoniker": "D:\\Main Project\\InternDB\\InternDB\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "InternDB\\wwwroot\\css\\site.css",
+              "ToolTip": "D:\\Main Project\\InternDB\\InternDB\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "InternDB\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAACQAAAAAAAAAAAAswEQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-22T11:08:07.903Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

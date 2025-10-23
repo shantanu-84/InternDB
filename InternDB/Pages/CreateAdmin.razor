@@ -1,0 +1,108 @@
+@page "/createadmin"
+@using Microsoft.AspNetCore.Identity
+@using InternDB.Data
+@inject UserManager<ApplicationUser> UserManager
+@inject SignInManager<ApplicationUser> SignInManager
+
+<PageTitle>Create Admin</PageTitle>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Create New Admin User</h3>
+                </div>
+                <div class="card-body">
+                    @if (!string.IsNullOrEmpty(message))
+                    {
+                        <div class="alert alert-info">@message</div>
+                    }
+                    
+                    <div class="mb-3">
+                        <button class="btn btn-primary" @onclick="CreateNewAdmin">Create Fresh Admin User</button>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <button class="btn btn-success" @onclick="TestDirectLogin">Test Direct Login</button>
+                    </div>
+                    
+                    @if (adminUser != null)
+                    {
+                        <div class="alert alert-success">
+                            <h5>Admin User Details:</h5>
+                            <p><strong>ID:</strong> @adminUser.Id</p>
+                            <p><strong>Username:</strong> @adminUser.UserName</p>
+                            <p><strong>Email:</strong> @adminUser.Email</p>
+                            <p><strong>Has Password:</strong> @(string.IsNullOrEmpty(adminUser.PasswordHash) ? "No" : "Yes")</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private string message = string.Empty;
+    private ApplicationUser? adminUser;
+    
+    private async Task CreateNewAdmin()
+    {
+        try
+        {
+            // Delete existing admin if exists
+            var existingAdmin = await UserManager.FindByNameAsync("admin");
+            if (existingAdmin != null)
+            {
+                await UserManager.DeleteAsync(existingAdmin);
+                message = "Deleted existing admin user. ";
+            }
+            
+            // Create new admin user
+            var admin = new ApplicationUser
+            {
+                UserName = "admin",
+                Email = "admin@example.com",
+                DisplayName = "Administrator",
+                EmailConfirmed = true
+            };
+            
+            var result = await UserManager.CreateAsync(admin, "Admin123!");
+            if (result.Succeeded)
+            {
+                await UserManager.AddToRoleAsync(admin, "Admin");
+                message += "New admin user created successfully! Username: admin, Password: Admin123!";
+                adminUser = admin;
+            }
+            else
+            {
+                message = $"Failed to create admin: {string.Join(", ", result.Errors.Select(e => e.Description))}";
+            }
+        }
+        catch (Exception ex)
+        {
+            message = $"Error: {ex.Message}";
+        }
+    }
+    
+    private async Task TestDirectLogin()
+    {
+        try
+        {
+            var result = await SignInManager.PasswordSignInAsync("admin", "Admin123!", false, false);
+            if (result.Succeeded)
+            {
+                message = "Direct login test successful!";
+            }
+            else
+            {
+                message = $"Direct login failed: {result.ToString()}";
+            }
+        }
+        catch (Exception ex)
+        {
+            message = $"Error: {ex.Message}";
+        }
+    }
+}

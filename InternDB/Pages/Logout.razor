@@ -1,0 +1,25 @@
+@page "/logout"
+@inject NavigationManager Navigation
+@inject IJSRuntime JSRuntime
+
+<PageTitle>Logout</PageTitle>
+
+<AuthorizeView>
+    <Authorized>
+        <p>Signing out...</p>
+    </Authorized>
+    <NotAuthorized>
+        <p>You are not signed in.</p>
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        // Clear the admin cookie
+        await JSRuntime.InvokeVoidAsync("cookieHelper.deleteCookie", "AdminLoggedIn");
+        Navigation.NavigateTo("/login", true);
+    }
+}
+
+

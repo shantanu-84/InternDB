@@ -1,0 +1,193 @@
+@page "/interns/edit/{Id:int}"
+@using InternDB.Data
+@using InternDB.Services
+@inject InternService InternService
+@inject NavigationManager Navigation
+@inject IJSRuntime JSRuntime
+
+<PageTitle>Edit Intern - InternDB</PageTitle>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            @if (isLoading)
+            {
+                <div class="text-center">
+                    <div class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+            }
+            else if (intern == null)
+            {
+                <div class="alert alert-danger">
+                    <h4>Intern not found</h4>
+                    <p>The intern you're looking for doesn't exist.</p>
+                    <button class="btn btn-primary" @onclick="GoToInterns">
+                        Back to Interns
+                    </button>
+                </div>
+            }
+            else
+            {
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Edit Intern: @intern.FullName</h3>
+                    </div>
+                    <div class="card-body">
+                        <EditForm Model="intern" OnValidSubmit="HandleValidSubmit">
+                            <DataAnnotationsValidator />
+                            <ValidationSummary class="text-danger" />
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="firstName" class="form-label">First Name *</label>
+                                    <InputText id="firstName" class="form-control" @bind-Value="intern.FirstName" />
+                                    <ValidationMessage For="@(() => intern.FirstName)" class="text-danger" />
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="lastName" class="form-label">Last Name *</label>
+                                    <InputText id="lastName" class="form-control" @bind-Value="intern.LastName" />
+                                    <ValidationMessage For="@(() => intern.LastName)" class="text-danger" />
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email *</label>
+                                    <InputText id="email" class="form-control" @bind-Value="intern.Email" />
+                                    <ValidationMessage For="@(() => intern.Email)" class="text-danger" />
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="phoneNumber" class="form-label">Phone Number</label>
+                                    <InputText id="phoneNumber" class="form-control" @bind-Value="intern.PhoneNumber" />
+                                    <ValidationMessage For="@(() => intern.PhoneNumber)" class="text-danger" />
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="department" class="form-label">Department *</label>
+                                    <InputText id="department" class="form-control" @bind-Value="intern.Department" />
+                                    <ValidationMessage For="@(() => intern.Department)" class="text-danger" />
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="position" class="form-label">Position *</label>
+                                    <InputText id="position" class="form-control" @bind-Value="intern.Position" />
+                                    <ValidationMessage For="@(() => intern.Position)" class="text-danger" />
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="startDate" class="form-label">Start Date *</label>
+                                    <InputDate id="startDate" class="form-control" @bind-Value="intern.StartDate" />
+                                    <ValidationMessage For="@(() => intern.StartDate)" class="text-danger" />
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="endDate" class="form-label">End Date</label>
+                                    <InputDate id="endDate" class="form-control" @bind-Value="intern.EndDate" />
+                                    <ValidationMessage For="@(() => intern.EndDate)" class="text-danger" />
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="notes" class="form-label">Notes</label>
+                                <InputTextArea id="notes" class="form-control" rows="3" @bind-Value="intern.Notes" />
+                                <ValidationMessage For="@(() => intern.Notes)" class="text-danger" />
+                            </div>
+                            
+                            <div class="d-flex justify-content-between">
+                                <button type="button" class="btn btn-secondary" @onclick="Cancel">
+                                    Cancel
+                                </button>
+                                <button type="submit" class="btn btn-primary" disabled="@isSubmitting">
+                                    @if (isSubmitting)
+                                    {
+                                        <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+                                    }
+                                    Update Intern
+                                </button>
+                            </div>
+                        </EditForm>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+    
+    private Intern? intern;
+    private bool isLoading = true;
+    private bool isSubmitting = false;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadIntern();
+    }
+    
+    private async Task LoadIntern()
+    {
+        isLoading = true;
+        StateHasChanged();
+        
+        try
+        {
+            intern = await InternService.GetInternByIdAsync(Id);
+        }
+        catch (Exception ex)
+        {
+            await JSRuntime.InvokeAsync<object>("alert", $"Error loading intern: {ex.Message}");
+        }
+        finally
+        {
+            isLoading = false;
+            StateHasChanged();
+        }
+    }
+    
+    private async Task HandleValidSubmit()
+    {
+        if (intern == null) return;
+        
+        isSubmitting = true;
+        StateHasChanged();
+        
+        try
+        {
+            var result = await InternService.UpdateInternAsync(intern);
+            if (result != null)
+            {
+                await JSRuntime.InvokeAsync<object>("alert", "Intern updated successfully!");
+                Navigation.NavigateTo("/interns");
+            }
+            else
+            {
+                await JSRuntime.InvokeAsync<object>("alert", "Error updating intern. Intern may have been deleted.");
+            }
+        }
+        catch (Exception ex)
+        {
+            await JSRuntime.InvokeAsync<object>("alert", $"Error updating intern: {ex.Message}");
+        }
+        finally
+        {
+            isSubmitting = false;
+            StateHasChanged();
+        }
+    }
+    
+    private void Cancel()
+    {
+        Navigation.NavigateTo("/interns");
+    }
+    
+    private void GoToInterns()
+    {
+        Navigation.NavigateTo("/interns");
+    }
+}

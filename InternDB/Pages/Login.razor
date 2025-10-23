@@ -1,0 +1,84 @@
+@page "/login"
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components.Forms
+@inject NavigationManager Navigation
+@inject IJSRuntime JSRuntime
+
+<PageTitle>Login</PageTitle>
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-header"><h4>Sign in</h4></div>
+                <div class="card-body">
+                    @if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        <div class="alert alert-danger">@errorMessage</div>
+                    }
+                    <EditForm Model="loginModel" OnValidSubmit="HandleLogin">
+                        <DataAnnotationsValidator />
+                        <ValidationSummary />
+
+                        <div class="mb-3">
+                            <label class="form-label" for="login-username">User ID</label>
+                            <InputText id="login-username" class="form-control" @bind-Value="loginModel.UserName" aria-label="User ID" autocomplete="username" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="login-password">Password</label>
+                            <InputText id="login-password" class="form-control" type="password" @bind-Value="loginModel.Password" aria-label="Password" autocomplete="current-password" />
+                        </div>
+                        <button class="btn btn-primary w-100" disabled="@isSubmitting">Log in</button>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private string? errorMessage;
+    private bool isSubmitting;
+
+    private LoginModel loginModel = new();
+
+    private class LoginModel
+    {
+        public string UserName { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+    }
+
+    private async Task HandleLogin()
+    {
+        isSubmitting = true;
+        errorMessage = null;
+        StateHasChanged();
+        
+        try
+        {
+            // Admin-only login system
+            if (loginModel.UserName == "admin" && loginModel.Password == "admin123")
+            {
+                // Set cookies for admin login
+                await JSRuntime.InvokeVoidAsync("cookieHelper.setCookie", "AdminLoggedIn", "true", 7);
+                await JSRuntime.InvokeVoidAsync("cookieHelper.setCookie", "UserRole", "Admin", 7);
+                await JSRuntime.InvokeVoidAsync("location.replace", "/");
+                return;
+            }
+            
+            errorMessage = "Invalid credentials. Use admin/admin123";
+        }
+        catch (Exception ex)
+        {
+            errorMessage = "An error occurred during login. Please try again.";
+            Console.WriteLine($"Login error: {ex.Message}");
+        }
+        finally
+        {
+            isSubmitting = false;
+            StateHasChanged();
+        }
+    }
+}
+
+

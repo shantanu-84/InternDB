@@ -1,0 +1,124 @@
+@page "/testauth"
+@using Microsoft.AspNetCore.Identity
+@using InternDB.Data
+@inject UserManager<ApplicationUser> UserManager
+@inject SignInManager<ApplicationUser> SignInManager
+
+<PageTitle>Test Authentication</PageTitle>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Authentication Test</h3>
+                </div>
+                <div class="card-body">
+                    @if (!string.IsNullOrEmpty(message))
+                    {
+                        <div class="alert alert-info">@message</div>
+                    }
+                    
+                    <div class="mb-3">
+                        <button class="btn btn-primary" @onclick="TestLogin">Test Login with admin/Admin@123</button>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <button class="btn btn-warning" @onclick="ResetAdminPassword">Reset Admin Password</button>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <button class="btn btn-info" @onclick="CheckAdminUser">Check Admin User</button>
+                    </div>
+                    
+                    @if (adminUser != null)
+                    {
+                        <div class="alert alert-success">
+                            <h5>Admin User Found:</h5>
+                            <p><strong>ID:</strong> @adminUser.Id</p>
+                            <p><strong>Username:</strong> @adminUser.UserName</p>
+                            <p><strong>Email:</strong> @adminUser.Email</p>
+                            <p><strong>Display Name:</strong> @adminUser.DisplayName</p>
+                            <p><strong>Has Password:</strong> @(string.IsNullOrEmpty(adminUser.PasswordHash) ? "No" : "Yes")</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private string message = string.Empty;
+    private ApplicationUser? adminUser;
+    
+    private async Task TestLogin()
+    {
+        try
+        {
+            var result = await SignInManager.PasswordSignInAsync("admin", "Admin@123", false, false);
+            if (result.Succeeded)
+            {
+                message = "Login successful!";
+            }
+            else
+            {
+                message = $"Login failed: {result.ToString()}";
+            }
+        }
+        catch (Exception ex)
+        {
+            message = $"Error: {ex.Message}";
+        }
+    }
+    
+    private async Task ResetAdminPassword()
+    {
+        try
+        {
+            var user = await UserManager.FindByNameAsync("admin");
+            if (user != null)
+            {
+                var token = await UserManager.GeneratePasswordResetTokenAsync(user);
+                var result = await UserManager.ResetPasswordAsync(user, token, "Admin@123");
+                if (result.Succeeded)
+                {
+                    message = "Admin password reset successfully!";
+                }
+                else
+                {
+                    message = $"Password reset failed: {string.Join(", ", result.Errors.Select(e => e.Description))}";
+                }
+            }
+            else
+            {
+                message = "Admin user not found!";
+            }
+        }
+        catch (Exception ex)
+        {
+            message = $"Error: {ex.Message}";
+        }
+    }
+    
+    private async Task CheckAdminUser()
+    {
+        try
+        {
+            adminUser = await UserManager.FindByNameAsync("admin");
+            if (adminUser != null)
+            {
+                var roles = await UserManager.GetRolesAsync(adminUser);
+                message = $"Admin user found. Roles: {string.Join(", ", roles)}";
+            }
+            else
+            {
+                message = "Admin user not found!";
+            }
+        }
+        catch (Exception ex)
+        {
+            message = $"Error: {ex.Message}";
+        }
+    }
+}
