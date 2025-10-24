@@ -58,7 +58,7 @@
 
 3. **Access the application**
    ```
-   http://localhost:5112
+   http://localhost:5112/login
    ```
 
 ### 🔑 Login Credentials
@@ -66,33 +66,29 @@
 - **Password:** `admin123`
 
 ---
-
-## 📱 Screenshots
-
-<div align="center">
-
-### 🏠 Home Page
-![Home Page](https://via.placeholder.com/800x400/007bff/ffffff?text=Welcome+to+InternDB)
-
-### 📊 Dashboard
-![Dashboard](https://via.placeholder.com/800x400/28a745/ffffff?text=Analytics+Dashboard)
-
-### 👥 Interns Management
-![Interns](https://via.placeholder.com/800x400/ffc107/000000?text=Intern+Management)
-
-</div>
-
----
-
 ## 🏗️ Project Structure
 
 ```
 InternDB/
-├── Data/                    # Entity models and DbContext
-├── Pages/                   # Blazor pages (Home, Login, Dashboard, Interns)
-├── Services/                # Business logic and authentication
-├── Shared/                  # Layout and navigation components
-└── wwwroot/                 # Static files (CSS, JS)
+├── 📁 Data/
+│   ├── Intern.cs                 # Intern entity model
+│   ├── InternDbContext.cs        # Database context
+│   └── Migrations/               # Entity Framework migrations
+├── 📁 Pages/
+│   ├── Home.razor               # Landing page
+│   ├── Login.razor              # Authentication
+│   ├── SimpleAdminDashboard.razor # Analytics dashboard
+│   ├── Interns.razor            # Intern management
+│   └── AddIntern.razor          # Add new intern
+├── 📁 Services/
+│   ├── InternService.cs         # Business logic
+│   └── SimpleAuthenticationStateProvider.cs # Auth provider
+├── 📁 Shared/
+│   ├── MainLayout.razor         # Main layout
+│   └── NavMenu.razor            # Navigation menu
+└── 📁 wwwroot/
+    ├── css/                     # Stylesheets
+    └── js/                      # JavaScript files
 ```
 
 ---
@@ -152,3 +148,4 @@ This project is licensed under the MIT License.
   <h3>⭐ If you found this project helpful, please give it a star! ⭐</h3>
   <p>Made with ❤️ by <a href="https://github.com/shantanu-84">Shantanu Rathod</a></p>
 </div>
+
