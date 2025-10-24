@@ -24,6 +24,9 @@ builder.Services.AddScoped<AttendanceService>();
 builder.Services.AddCascadingAuthenticationState();
 builder.Services.AddScoped<AuthenticationStateProvider, SimpleAuthenticationStateProvider>();
 
+// Add Authorization services
+builder.Services.AddAuthorizationCore();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -39,6 +42,10 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+// Add Authentication and Authorization middleware
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");

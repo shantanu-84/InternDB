@@ -1,6 +1,9 @@
 @page "/interns/edit/{Id:int}"
+@attribute [Authorize(Roles = "Admin")]
 @using InternDB.Data
 @using InternDB.Services
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components.Forms
 @inject InternService InternService
 @inject NavigationManager Navigation
 @inject IJSRuntime JSRuntime

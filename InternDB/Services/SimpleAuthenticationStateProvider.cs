@@ -31,7 +31,8 @@ namespace InternDB.Services
                     {
                         new Claim(ClaimTypes.Name, name),
                         new Claim(ClaimTypes.NameIdentifier, name),
-                        new Claim(ClaimTypes.Role, role)
+                        new Claim(ClaimTypes.Role, role),
+                        new Claim("IsAuthenticated", "true")
                     };
 
                     var identity = new ClaimsIdentity(claims, "simple");
@@ -41,19 +42,20 @@ namespace InternDB.Services
             }
             catch
             {
-                // Ignore errors
+                // Ignore errors and return unauthenticated state
             }
 
             return new AuthenticationState(new ClaimsPrincipal());
         }
 
-        public void NotifyUserAuthentication()
+        public void NotifyUserAuthentication(string role = "Admin")
         {
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, "admin"),
-                new Claim(ClaimTypes.NameIdentifier, "admin"),
-                new Claim(ClaimTypes.Role, "Admin")
+                new Claim(ClaimTypes.Name, role.ToLower()),
+                new Claim(ClaimTypes.NameIdentifier, role.ToLower()),
+                new Claim(ClaimTypes.Role, role),
+                new Claim("IsAuthenticated", "true")
             };
 
             var identity = new ClaimsIdentity(claims, "simple");
