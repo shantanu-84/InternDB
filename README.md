@@ -21,6 +21,7 @@
 - **🔍 Search & Filter** - Quick search and advanced filtering capabilities
 - **📱 Responsive Design** - Works on desktop, tablet, and mobile
 - **🔒 Secure Authentication** - Cookie-based admin login system
+- **📊 Data Export** - Export intern data to Excel format for reporting and analysis
 
 ---
 
@@ -98,6 +99,17 @@ InternDB/
 - **Recent Additions** - Latest 3 interns with join dates
 - **Department Analytics** - Top 3 departments with intern counts
 - **Status Tracking** - Active and completed intern statuses
+
+---
+
+## 🌐 Web Access
+
+The application is hosted at:
+```
+https://vs53z7cz-7090.inc1.devtunnels.ms/
+```
+
+⚠️ **Important Note:** The webapp is not directly accessible. You need to contact me first as the application needs to be running on the server side. Please reach out to get access.
 
 ---
 
