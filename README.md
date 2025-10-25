@@ -27,7 +27,6 @@
 ## 🛠️ Tech Stack
 
 | Backend | .NET 9.0, ASP.NET Core, Blazor Server |
-|---------|----------------------------------------|
 | Database | SQL Server, Entity Framework Core |
 | Frontend | Razor Pages, Bootstrap 5.0 |
 | Authentication | Custom Cookie-based Authentication |
@@ -148,4 +147,5 @@ This project is licensed under the MIT License.
   <h3>⭐ If you found this project helpful, please give it a star! ⭐</h3>
   <p>Made with ❤️ by <a href="https://github.com/shantanu-84">Shantanu Rathod</a></p>
 </div>
+
 
