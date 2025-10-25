@@ -2,6 +2,7 @@
 @attribute [Authorize(Roles = "Admin")]
 @using InternDB.Data
 @using InternDB.Services
+@using System.Text
 @inject InternService InternService
 @inject NavigationManager Navigation
 @inject IJSRuntime JSRuntime
@@ -13,9 +14,15 @@
         <div class="col-12">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h2>Interns</h2>
-                <button class="btn btn-primary" @onclick="AddNewIntern">
-                    <span class="oi oi-plus"></span> Add New Intern
-                </button>
+                <div>
+                    <button class="btn btn-success me-2" @onclick="ExportToCsv">
+                        <span class="oi oi-data-transfer-download"></span>
+                        Export to CSV
+                    </button>
+                    <button class="btn btn-primary" @onclick="AddNewIntern">
+                        <span class="oi oi-plus"></span> Add New Intern
+                    </button>
+                </div>
             </div>
             
             @if (isLoading)
@@ -212,5 +219,57 @@
                 await LoadInterns();
             }
         }
+    }
+
+    private async Task ExportToCsv()
+    {
+        try
+        {
+            var sb = new StringBuilder();
+            
+            // Add CSV header
+            sb.AppendLine("Name,Email,Department,Position,Start Date,End Date,Status");
+            
+            // Add data rows
+            foreach (var intern in interns)
+            {
+                var row = string.Join(",",
+                    EscapeCsvField(intern.FullName),
+                    EscapeCsvField(intern.Email),
+                    EscapeCsvField(intern.Department),
+                    EscapeCsvField(intern.Position),
+                    EscapeCsvField(intern.StartDate.ToString("yyyy-MM-dd")),
+                    EscapeCsvField(intern.EndDate?.ToString("yyyy-MM-dd") ?? ""),
+                    EscapeCsvField(intern.EndDate.HasValue && intern.EndDate.Value <= DateTime.Now ? "Completed" : "Active")
+                );
+                sb.AppendLine(row);
+            }
+
+            // Generate filename with current date
+            var filename = $"interns_export_{DateTime.Now:yyyy-MM-dd}.csv";
+            
+            // Trigger download using JavaScript
+            await JSRuntime.InvokeVoidAsync("downloadFile", filename, sb.ToString());
+        }
+        catch (Exception ex)
+        {
+            await JSRuntime.InvokeVoidAsync("alert", $"Error exporting to CSV: {ex.Message}");
+        }
+    }
+
+    private string EscapeCsvField(string field)
+    {
+        if (string.IsNullOrEmpty(field)) return "";
+        
+        // If the field contains comma, newline, or double quote, it needs to be escaped
+        if (field.Contains(",") || field.Contains("\"") || field.Contains("\n") || field.Contains("\r"))
+        {
+            // Replace double quotes with two double quotes
+            field = field.Replace("\"", "\"\"");
+            // Wrap the field in double quotes
+            return $"\"{field}\"";
+        }
+        
+        return field;
     }
 }
